@@ -2,8 +2,6 @@ Unicorn Toilet
 ===
 > a backend REST API for the Unicorn Toilet App
 
-* Start the server `yarn start`
-
 ## API Resources
 #### User Model
 
@@ -15,7 +13,6 @@ Unicorn Toilet
 * `preferences` - object storing user's preset filters
 
 #### Toilet Model
-Each user can have a single profile. Authorization is required for Creating, Updating, and Deleteing Profiles but they have public read access.  
 
 * `_id` 
 * `name` 
@@ -32,6 +29,7 @@ Each user can have a single profile. Authorization is required for Creating, Upd
 
 ## RESTFUL API Routes
 /api/users
+
 /api/toilets
 
 #### Get Requests
@@ -46,6 +44,6 @@ Each user can have a single profile. Authorization is required for Creating, Upd
 * update `TOILET` data
 
 ### Delete Requests
-* delete a user profile 
+* delete a `USER` profile 
 
 
