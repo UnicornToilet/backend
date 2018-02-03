@@ -8,6 +8,12 @@ const profileScheama = new Schema({
   username: {type: String, required: true},
   avatar: {type: String},
   bio: {type: String},
+  overallQuality: {type: String},
+  tpQuality: {type: String},
+  occupancy: {type: String},
+  soap: {type: String},
+  dryingMethod: {type: String},
+  babyChanging: {type: String},
 })
 
 const Profile = Mongoose.model('profile', profileScheama)
