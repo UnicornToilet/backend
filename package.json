@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/UnicornToilet/backend",
-  "author": "Ashkaan Jaberi",
+  "author": "Ashkaan Jaberi, Kyle Richey, Joel Epstein",
   "license": "MIT",
   "jest": {
     "setupFiles": [
@@ -17,8 +17,11 @@
     "watch": "nodemon index.js",
     "test": "jest --runInBand",
     "test-watch": "jest --runInBand --watchAll",
-    "dbon": "mkdir -p ./db && mongod --dbpath ./db",
+    "dbon": "mkdir -p ./db && mongod --dbpath ./db --smallfiles",
     "dboff": "killall mongod"
+  },
+  "engines": {
+    "node": "6.11.3"
   },
   "dependencies": {
     "aws-sdk": "^2.92.0",
@@ -46,6 +49,7 @@
     "multer": "^1.3.0",
     "nodemon": "^1.11.0",
     "ramda": "^0.24.1",
+    "socket.io": "^2.0.4",
     "webpack": "^3.4.1"
   },
   "devDependencies": {
