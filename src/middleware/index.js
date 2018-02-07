@@ -8,6 +8,7 @@ import cookieParser from 'cookie-parser'
 import routerAuth from './router-auth.js'
 import fourOhFour from './four-oh-four.js'
 import routerPhoto from './router-photo.js'
+import routerToilet from './router-toilet.js'
 import errorHandler from './error-handler.js'
 import routerProfile from './router-profile.js'
 import requestReporter from './request-reporter.js'
@@ -28,6 +29,7 @@ export default new Router()
   // ROUTERS 
   routerAuth,
   routerPhoto,
+  routerToilet,
   routerProfile,
   // ERROR HANDLERS
   fourOhFour, 
