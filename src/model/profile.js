@@ -48,6 +48,12 @@ Profile.createProfileWithPhoto = function(req){
         email: req.user.email,
         bio: req.body.bio,
         avatar: s3Data.Location,
+        overallQuality: req.body.overallQuality,
+        tpQuality: req.body.tpQuality,
+        occupancy: req.body.occupancy,
+        soap: req.body.soap,
+        dryingMethod: req.body.dryingMethod,
+        babyChanging: req.body.babyChanging,
       }).save()
     })
   })
@@ -68,6 +74,12 @@ Profile.create = function(req){
     username: req.user.username, 
     email: req.user.email,
     bio: req.body.bio,
+    overallQuality: req.body.overallQuality,
+    tpQuality: req.body.tpQuality,
+    occupancy: req.body.occupancy,
+    soap: req.body.soap,
+    dryingMethod: req.body.dryingMethod,
+    babyChanging: req.body.babyChanging,
   })
   .save()
   .then(profile => {
