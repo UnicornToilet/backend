@@ -9,7 +9,7 @@ const toiletScheama = new Schema ({
   genderNeutral: {type: Boolean},
   occupancy: {type: Boolean},
   soap: {type: String},
-  dryingMethod: {type: String},
+  dryingMethod: {type: Boolean},
   babyChanging: {type: Boolean},
 })
 
