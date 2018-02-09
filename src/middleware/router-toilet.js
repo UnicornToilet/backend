@@ -12,20 +12,33 @@ export default new Router()
   })
 
   .post('/toilet', parserBody, (req, res, next) => {
-    Toilet.find()
-      .where('overallQuality').gte(req.body.overallQuality)
-      .where('tpQuality').gte(req.body.tpQuality)
-      .where('genderNeutral').equals(req.body.tpQuality)
-      .where('occupancy').equals(req.body.occupancy)
-      .where('soap').equals(req.body.soap)
-      .where('dryingMethod').equals(req.body.dryingMethod)
-      .where('babyChanging').equals(req.body.babyChanging)
-      .then(res.page)
-      .catch(next);
+    const { overallQuality, tpQuality, occupancy, soap, dryingMethod, babyChanging } = req.body;
+    const query = Toilet.find()
+      if (overallQuality) {
+        query.where('overallQuality').gte(overallQuality)
+      };
+      if (tpQuality) {
+        query.where('tpQuality').gte(tpQuality)
+      };
+      if (occupancy) {
+        query.where('occupancy').equals(occupancy)
+      };
+      if (soap) {
+        query.where('soap').equals(soap)
+      };
+      if (dryingMethod) {
+        query.where('dryingMethod').equals(dryingMethod)
+      };
+      if (babyChanging) {
+        query.where('babyChanging').equals(babyChanging)
+      };
+      query.exec((err, toilets) => {
+        res.send(toilets)
+      })
   })
   
   .get('/toilet', (req, res, next) => {
-    Toilet.find({})
+    Toilet.find()
       .then(toilets => res.send(toilets))
       .catch(next);
   });
