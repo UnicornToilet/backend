@@ -1,18 +1,17 @@
-import * as _ from 'ramda'
-import * as util from '../lib/util.js'
-import createError from 'http-errors'
-import Mongoose, {Schema} from 'mongoose'
+import Mongoose, {Schema} from 'mongoose';
 
-const toiletScheama = new Schema ({
-  overallQuality: {type: Number},
-  tpQuality: {type: Number},
-  genderNeutral: {type: Boolean},
-  occupancy: {type: Boolean},
-  soap: {type: String},
-  dryingMethod: {type: Boolean},
-  babyChanging: {type: Boolean},
-})
+const toiletSchema = new Schema ({
+  locationName: String,
+  location: Schema.Types.Mixed,
+  overallQuality: Number,
+  tpQuality: Number,
+  genderNeutral: String,
+  occupancy: String,
+  soap: String,
+  dryingMethod: String,
+  babyChanging: String,
+});
 
-const Toilet = Mongoose.model('toilet', toiletScheama);
+const Toilet = Mongoose.model('toilet', toiletSchema);
 
-export default Toilet
+export default Toilet;
