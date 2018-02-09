@@ -19,7 +19,7 @@ export default new Router()
 .use([
   // GLOBAL MIDDLEWARE
   cors({
-    origin: 'http://localhost:8080',
+    origin: process.env.CORS_ORIGINS,
     credentials: true,
   }),
   morgan('dev'),
