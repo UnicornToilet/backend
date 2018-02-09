@@ -10,11 +10,11 @@ const state = { isOn: false }
 
 // INTERFACE
 export const start = () => {
-  log('__DB_UP__', process.env.MONGO_URI)
+  log('__DB_UP__', process.env.MONGODB_URI)
   if(state.isOn)
     return Promise.reject(new Error('USER ERROR: db is connected'))
   state.isOn = true
-  return mongoose.connect(process.env.MONGO_URI, {useMongoClient: true})
+  return mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true})
 }
 
 export const stop = () => {

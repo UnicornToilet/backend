@@ -23,6 +23,7 @@ export default new Router()
       .then(res.page)
       .catch(next);
   })
+  
   .get('/toilet', (req, res, next) => {
     Toilet.find({})
       .then(toilets => res.send(toilets))
