@@ -5,7 +5,6 @@ const toiletSchema = new Schema ({
   location: Schema.Types.Mixed,
   overallQuality: Number,
   tpQuality: Number,
-  genderNeutral: String,
   occupancy: String,
   soap: String,
   dryingMethod: String,
