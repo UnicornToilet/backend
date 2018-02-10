@@ -5,10 +5,8 @@ const toiletSchema = new Schema ({
   location: Schema.Types.Mixed,
   overallQuality: Number,
   tpQuality: Number,
-  occupancy: String,
   soap: String,
-  dryingMethod: String,
-  babyChanging: String,
+  drying: String,
 });
 
 const Toilet = Mongoose.model('toilet', toiletSchema);
