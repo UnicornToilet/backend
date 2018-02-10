@@ -5,6 +5,8 @@ import Toilet from '../model/toilet.js';
 import {bearerAuth} from './parser-auth.js';
 
 export default new Router()
+//TODO:re-add bearerAuth
+
   .post('/addToilet', parserBody, (req, res, next) => {
     Toilet.create(req.body)
       .then(toilet => res.send(toilet))
@@ -36,10 +38,9 @@ export default new Router()
       res.send(toilets);
     });
   })
-  
+
   .get('/toilet', (req, res, next) => {
     Toilet.find()
       .then(toilets => res.send(toilets))
       .catch(next);
   });
-

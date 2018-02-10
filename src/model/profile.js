@@ -4,12 +4,8 @@ import Mongoose, {Schema} from 'mongoose';
 
 const profileScheama = new Schema({
   owner: {type: Schema.Types.ObjectId, required: true, unique: true},
-  email: {type: String, required: true},
-  username: {type: String, required: true},
-  avatar: {type: String},
-  bio: {type: String},
-  overallQuality: {type: String},
-  tpQuality: {type: String},
+  overallQuality: {type: Number},
+  tpQuality: {type: Number},
   occupancy: {type: String},
   soap: {type: String},
   dryingMethod: {type: String},
@@ -44,10 +40,6 @@ Profile.createProfileWithPhoto = function(req){
         .then((s3Data) => {
           return new Profile({
             owner: req.user._id,
-            username: req.user.username,
-            email: req.user.email,
-            bio: req.body.bio,
-            avatar: s3Data.Location,
             overallQuality: req.body.overallQuality,
             tpQuality: req.body.tpQuality,
             occupancy: req.body.occupancy,
@@ -71,9 +63,6 @@ Profile.create = function(req){
 
   return new Profile({
     owner: req.user._id,
-    username: req.user.username,
-    email: req.user.email,
-    bio: req.body.bio,
     overallQuality: req.body.overallQuality,
     tpQuality: req.body.tpQuality,
     occupancy: req.body.occupancy,

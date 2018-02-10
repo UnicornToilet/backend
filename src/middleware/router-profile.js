@@ -5,7 +5,7 @@ import Profile from '../model/profile.js';
 import {bearerAuth} from './parser-auth.js';
 
 export default new Router()
-  .post('/profiles', bearerAuth, parserBody, (req, res, next) => {
+  .post('/profiles', parserBody, (req, res, next) => {
     Profile.create(req)
       .then(res.json)
       .catch(next);
@@ -15,7 +15,8 @@ export default new Router()
       .then(res.page)
       .catch(next);
   })
-  .get('/profiles/me', bearerAuth, (req, res, next) => {
+  //TODO:re-add bearerAuth
+  .get('/profiles/me', (req, res, next) => {
     Profile.findOne({owner: req.user._id})
       .then(profile => {
         if(!profile)
