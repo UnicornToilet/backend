@@ -12,7 +12,7 @@ export default new Router()
   })
 
   .post('/toilet', parserBody, (req, res, next) => {
-    const { overallQuality, tpQuality, occupancy, soap, dryingMethod, babyChanging } = req.body;
+    const { overallQuality, tpQuality, occupancy, soap, drying, babyChanging } = req.body;
     const query = Toilet.find();
     if (overallQuality) {
       query.where('overallQuality').gte(overallQuality);
@@ -26,8 +26,8 @@ export default new Router()
     if (soap) {
       query.where('soap').equals(soap);
     }
-    if (dryingMethod) {
-      query.where('dryingMethod').equals(dryingMethod);
+    if (drying) {
+      query.where('drying').equals(drying);
     }
     if (babyChanging) {
       query.where('babyChanging').equals(babyChanging);

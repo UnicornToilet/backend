@@ -7,7 +7,7 @@ const toiletSchema = new Schema ({
   tpQuality: Number,
   occupancy: String,
   soap: String,
-  dryingMethod: String,
+  drying: String,
   babyChanging: String,
 });
 
