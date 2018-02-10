@@ -1,5 +1,5 @@
-import * as _ from 'ramda'
-import request from 'superagent'
+import * as _ from 'ramda';
+import request from 'superagent';
 import cleanDB from './lib/clean-db.js'
 import * as server from '../lib/server.js'
 import {mockProfile} from './lib/mock-profile.js'
