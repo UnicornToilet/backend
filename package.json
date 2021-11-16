@@ -24,7 +24,7 @@
     "node": "8.9.4"
   },
   "dependencies": {
-    "aws-sdk": "^2.527.0",
+    "aws-sdk": "^2.814.0",
     "aws-sdk-mock": "^4.5.0",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
